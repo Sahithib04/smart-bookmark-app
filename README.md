@@ -64,7 +64,7 @@ Google Cloud OAuth settings
 
 Next.js redirectTo option
 
-## I fixed this by:
+I fixed this by:
 
 Updating Supabase Site URL to the Vercel production URL
 
@@ -81,7 +81,7 @@ The app initially failed to connect to Supabase after deployment.
 Root cause:
 Environment variables were not configured in Vercel.
 
-## Solution:
+Solution:
 
 Added NEXT_PUBLIC_SUPABASE_URL
 
@@ -93,7 +93,7 @@ Redeployed the app
 
 The dashboard page was accessible without authentication if the URL was entered manually.
 
-## Solution:
+Solution:
 
 Used supabase.auth.getSession() inside useEffect
 
@@ -103,7 +103,7 @@ Redirected unauthenticated users to the homepage
 
 After login, users were redirected to / instead of /dashboard.
 
-## Solution:
+Solution:
 
 Configured redirectTo correctly inside signInWithOAuth
 

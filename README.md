@@ -50,11 +50,10 @@ Dashboard checks session before rendering.
 
 The app is deployed on Vercel with environment variables configured securely.
 
-
 Users can only access their own bookmarks.
 
 # Challenges Faced & How I Solved Them
-1. Google OAuth Redirect Issues (Production vs Localhost)
+# 1. Google OAuth Redirect Issues (Production vs Localhost)
 
 Initially, authentication worked on localhost but failed after deployment.
 The issue was caused by incorrect redirect URLs in:
@@ -65,7 +64,7 @@ Google Cloud OAuth settings
 
 Next.js redirectTo option
 
-I fixed this by:
+# I fixed this by:
 
 Updating Supabase Site URL to the Vercel production URL
 
@@ -75,14 +74,14 @@ Ensuring the callback URL was correctly set in Google Cloud Console
 
 Updating redirectTo to the production URL before deploying
 
-2️. Environment Variables Not Working on Vercel
+# 2️. Environment Variables Not Working on Vercel
 
 The app initially failed to connect to Supabase after deployment.
 
 Root cause:
 Environment variables were not configured in Vercel.
 
-Solution:
+# Solution:
 
 Added NEXT_PUBLIC_SUPABASE_URL
 
@@ -90,21 +89,21 @@ Added NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 Redeployed the app
 
-3️. Route Protection
+# 3️. Route Protection
 
 The dashboard page was accessible without authentication if the URL was entered manually.
 
-Solution:
+# Solution:
 
 Used supabase.auth.getSession() inside useEffect
 
 Redirected unauthenticated users to the homepage
 
-4️. OAuth Returning to Root Instead of Dashboard
+# 4️. OAuth Returning to Root Instead of Dashboard
 
 After login, users were redirected to / instead of /dashboard.
 
-Solution:
+# Solution:
 
 Configured redirectTo correctly inside signInWithOAuth
 

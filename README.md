@@ -2,7 +2,7 @@
 
 A simple full-stack bookmark manager built using Next.js (App Router) and Supabase.
 
-This project was built as part of a Fullstack/GenAI screening task.
+This project was built as part of a Fullstack/GenAI screening task for Abstrabit Technologies Pvt Ltd.
 
 # Live Demo
 
